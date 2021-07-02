@@ -11,11 +11,11 @@ import axios from "axios";
 import "./App.css";
 // https://api.github.com/users
 const App = () => {
-  const [users, setUsers] = useState([]); /* Default user empty array */
-  const [user, setUser] = useState({}); /* Default user empty array */
-  const [repos, setRepos] = useState([]); /* Default user empty array */
-  const [loading, setLoading] = useState(false); /* Default user empty array */
-  const [alert, setAlert] = useState(null); /* Default user empty array */
+  const [users, setUsers] = useState([]); /* Default users =  empty array */
+  const [user, setUser] = useState({}); /* Default user = empty object */
+  const [repos, setRepos] = useState([]); /* Default repos= empty array */
+  const [loading, setLoading] = useState(false); /* Default loading = false */
+  const [alert, setAlert] = useState(null); /* Default alert = null*/
 
   //Search Github Users
   const searchUsers = async (text) => {
