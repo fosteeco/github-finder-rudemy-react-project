@@ -1,3 +1,13 @@
+# About this project 
+I created this project by following Brad Traversy's course [React Front To Back](https://www.udemy.com/course/modern-react-front-to-back/) 
+His code can be found here: https://github.com/bradtraversy/github-finder
+I realized halfway through that using git would help me track the progress of this project. This was a good project to learn about react but I feel like Brad's course can be hard to follow sometimes. Overall I thought it was pretty fun to build. 
+If I were to create this again I would definitely have used git from the start. committing when stuff is working and then being able to go back when it's broken is super helpful. 
+One issue I got stuck on during the course was getting the <User/> Functional component to render. When I first wrote it I didn't use the correct route so it wouldn't render. 
+It was difficult to debug because there wasn't any error but the app wasn't working 
+I used /user:login when it should've been /user/:login . Once I overcame that issue the rest of the project came together nicely. 
+Seeing all the different ways to write react stuff was neat but I don't know if it was worth learning. Oveall I'm excited to continue this course and create other apps with different functionalities. I'm going to deploy this to netlify and post a link soon.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
