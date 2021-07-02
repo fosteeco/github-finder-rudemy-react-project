@@ -11,6 +11,16 @@ import {
   GET_REPOS,
 } from "../types";
 
+let gitHubClientId;
+let gitHubClientSecret;
+if (process.env.NODE_ENV !== "production") {
+  gitHubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+  gitHubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+} else {
+  gitHubClientId = process.env.GITHUB_CLIENT_ID;
+  gitHubClientSecret = process.env.GITHUB_CLIENT_SECRET;
+}
+
 const GithubState = (props) => {
   const initialState = {
     users: [],
@@ -26,7 +36,7 @@ const GithubState = (props) => {
     // console.log("main-app", text);
     setLoading();
     const res = await axios.get(
-      `https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      `https://api.github.com/search/users?q=${text}&client_id=${gitHubClientId}&client_secret=${gitHubClientSecret}`
     );
     dispatch({ type: SEARCH_USERS, payload: res.data.items });
     // setUsers(res.data.items);
@@ -36,7 +46,7 @@ const GithubState = (props) => {
   const getUser = async (username) => {
     setLoading();
     const res = await axios.get(
-      `https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      `https://api.github.com/users/${username}?client_id=${gitHubClientId}&client_secret=${gitHubClientSecret}`
     );
     dispatch({ type: GET_USER, payload: res.data });
     // setUser(res.data);
@@ -47,7 +57,7 @@ const GithubState = (props) => {
     setLoading(true);
     const res = await axios.get(
       //https://api.github.com/users/bradtraversy/repos
-      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&?client_id=${gitHubClientId}&client_secret=${gitHubClientSecret}`
     );
     dispatch({
       type: GET_REPOS,
