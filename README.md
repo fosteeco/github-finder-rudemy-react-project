@@ -6,7 +6,7 @@ If I were to create this again I would definitely have used git from the start. 
 One issue I got stuck on during the course was getting the <User/> Functional component to render. When I first wrote it I didn't use the correct route so it wouldn't render. 
 It was difficult to debug because there wasn't any error but the app wasn't working 
 I used /user:login when it should've been /user/:login . Once I overcame that issue the rest of the project came together nicely. 
-Seeing all the different ways to write react stuff was neat but I don't know if it was worth learning. Oveall I'm excited to continue this course and create other apps with different functionalities. I'm going to deploy this to netlify and post a link soon.
+Seeing all the different ways to write react stuff was neat but I don't know if it was worth learning. Oveall I'm excited to continue this course and create other apps with different functionalities. Here's the link to the finished site: https://githubfinder-cfoster.netlify.app/
 
 # Getting Started with Create React App
 
