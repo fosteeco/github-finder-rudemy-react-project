@@ -8,6 +8,7 @@ const User = ({ user, loading, getUser, getUserRepos, repos, match }) => {
   useEffect(() => {
     getUser(match.params.login);
     getUserRepos(match.params.login);
+    //es-lint-disable-nextline
   }, []); /* <-- Provide an empty set of brackets, could insert an element that will make cause effect run when that element is changed */
   const {
     name,
